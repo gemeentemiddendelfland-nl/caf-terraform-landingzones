@@ -77,11 +77,6 @@ variable "root_id" {
   type        = string
   description = "If specified, will set a custom Name (ID) value for the Enterprise-scale \"root\" Management Group, and append this to the ID for all core Enterprise-scale Management Groups."
   default     = "es"
-
-  validation {
-    condition     = can(regex("^[a-zA-Z0-9-]{2,10}$", var.root_id))
-    error_message = "The root_id value must be between 2 to 10 characters long and can only contain alphanumeric characters and hyphens."
-  }
 }
 
 variable "root_name" {
@@ -253,4 +248,8 @@ variable "tf_cloud_organization" {
 variable "tf_cloud_hostname" {
   default     = "app.terraform.io"
   description = "When user backend_type with remote, set the TFC/TFE hostname."
+}
+
+variable "strict_subscription_association" {
+  default = false
 }

@@ -1,7 +1,9 @@
 module "solution" {
-  source  = "aztfmod/caf/azurerm"
-  version = "5.7.11"
+  #source  = "aztfmod/caf/azurerm"
+  #version = "5.7.11"
   # source = "git::https://github.com/aztfmod/terraform-azurerm-caf.git?ref=main"
+  source = "git::https://github.com/gemeentemiddendelfland-nl/terraform-azurerm-caf.git?ref=middendelfland"
+
 
   providers = {
     azurerm.vhub = azurerm.vhub
@@ -60,6 +62,7 @@ module "solution" {
   var_folder_path                       = var.var_folder_path
   webapp                                = local.webapp
   maps                                  = local.maps
+  resource_provider_registration        = var.resource_provider_registration
 
   diagnostics = {
     diagnostic_event_hub_namespaces = try(local.diagnostics.diagnostic_event_hub_namespaces, var.diagnostic_event_hub_namespaces)
