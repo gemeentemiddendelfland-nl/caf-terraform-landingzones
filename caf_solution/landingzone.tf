@@ -1,6 +1,6 @@
 module "solution" {
   #source  = "aztfmod/caf/azurerm"
-  #version = "5.7.11"
+  #version = "5.7.14"
   # source = "git::https://github.com/aztfmod/terraform-azurerm-caf.git?ref=main"
   source = "git::https://github.com/gemeentemiddendelfland-nl/terraform-azurerm-caf.git?ref=middendelfland"
 
